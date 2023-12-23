@@ -12,7 +12,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 // Variable global qu détermine si un administrateur est connecté
-$_SESSION["isAdmin"] = true;
+if(!isset($_SESSION["isAdmin"])){
+    $_SESSION["isAdmin"] = true;
+}
 
 #[Route('/link')]
 class LinkController extends AbstractController
