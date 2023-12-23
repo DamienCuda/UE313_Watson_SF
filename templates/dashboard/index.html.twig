@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper {
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+
+    .example-wrapper code {
+        background: #F5F5F5;
+        padding: 2px 6px;
+    }
+</style>
+
+<div class="example-wrapper">
+
+    <div>
+        <h2>Tous les liens</h2>
+        {% if links is not empty %}
+        <ul>
+            {% for link in links %}
+            <li>
+                <a href="{{ path('app_link_show', {'id': link.id}) }}">{{ link.titre }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Aucun lien n'est disponible pour l'affichage.</p>
+        {% endif %}
+        <a href="{{ path('app_user_index') }}">Voir tous les utilisateurs</a>
+    </div>
+
+    <div>
+        <h2>Tous les utilisateurs</h2>
+        {% if users is not empty %}
+        <ul>
+            {% for user in users %}
+            <li>
+                <a href="{{ path('app_user_show', {'id': user.id}) }}">{{ user.username }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Aucun utilisateur n'est disponible pour l'affichage.</p>
+        {% endif %}
+        <a href="{{ path('app_link_index') }}">Voir tous les liens</a>
+    </div>
+
+</div>
+
+
+
+
+</div>
+{% endblock %}
