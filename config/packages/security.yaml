@@ -40,6 +40,7 @@ security:
     access_control:
         - { path: ^/link, roles: ROLE_USER }
         - { path: ^/user, roles: ROLE_USER }
+        - { path: ^/dashboard, roles: ROLE_USER }
 
 when@test:
     security:
