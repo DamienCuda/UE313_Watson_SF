@@ -1,4 +1,23 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+     <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
+    </div>
+    
+    {# Formulaire inspiré de cette exemple : https://symfony.com/doc/current/form/form_customization.html #}
+    <div class="row edit_form">
+        <div class="col link_title">
+            {{ form_row(form.titre) }}
+        </div>
+        <div class="col link_url">
+            {{ form_row(form.url) }}
+        </div>
+        <div class="col link_desc">
+            {{ form_row(form.decription) }}
+        </div>
+        <div class="col link_tag">
+            {{ form_row(form.tag) }}
+        </div>
+    </div>
+
+    <button class="btn">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}

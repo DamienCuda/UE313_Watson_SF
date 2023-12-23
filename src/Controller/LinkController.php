@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+// Variable global qu détermine si un administrateur est connecté
+$_SESSION["isAdmin"] = true;
+
 #[Route('/link')]
 class LinkController extends AbstractController
 {
@@ -19,6 +22,7 @@ class LinkController extends AbstractController
     {
         return $this->render('link/index.html.twig', [
             'links' => $linkRepository->findAll(),
+            'isAdmin' => $_SESSION["isAdmin"],
         ]);
     }
 
@@ -47,6 +51,7 @@ class LinkController extends AbstractController
     {
         return $this->render('link/show.html.twig', [
             'link' => $link,
+            'isAdmin' => $_SESSION["isAdmin"],
         ]);
     }
 

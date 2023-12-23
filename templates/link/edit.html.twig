@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Link{% endblock %}
+{% block title %}Modifier un lien{% endblock %}
 
 {% block body %}
-    <h1>Edit Link</h1>
+    <h1>Modifier un lien</h1>
 
-    {{ include('link/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('link/_form.html.twig', {'button_label': 'Enregistrer'}) }}
 
-    <a href="{{ path('app_link_index') }}">back to list</a>
+    <div class="link_actions">
+        <a href="{{ path('app_link_index') }}">Retour à la liste des liens</a>
+        {{ include('link/_delete_form.html.twig') }}
+    </div>
 
-    {{ include('link/_delete_form.html.twig') }}
 {% endblock %}
