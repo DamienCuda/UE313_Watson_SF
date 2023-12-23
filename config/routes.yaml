@@ -1,3 +1,4 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+app_register:
+    path: /
+    controller: App\Controller\ArticleController::index
+    methods: ['GET', 'HEAD']
