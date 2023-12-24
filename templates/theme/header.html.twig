@@ -1,7 +1,7 @@
 <div class="header">
     <ul class="menu">
 
-        
+        <li><a href="/"><i class="fa-solid fa-house"></i>Home</a></li>
         <li><a href="/blog"><i class="fa-solid fa-blog"></i>Blog</a></li>
         {% if app.user %}
         <li><a href="/link"><i class="fa-solid fa-newspaper"></i>Links</a></li>
@@ -14,7 +14,7 @@
             </form>
         </li>
         {% else %}
-        <li><a href="/login"><i class="fa-solid fa-right-to-bracket"></i>Log in</a></li>
+        <li class="logout"><a href="/login"><i class="fa-solid fa-right-to-bracket"></i>Log in</a></li>
         {% endif %}
         
     </ul>
