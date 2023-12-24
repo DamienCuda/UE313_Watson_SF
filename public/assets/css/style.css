@@ -1,8 +1,220 @@
-* {
+/* THEME CUSTOMIZATION */
+
+body {
+    --color-primary : #433e86;
+    --color-primary-hover : #534ea0;
+    --color-primary-active: #534ea0;
+    --color-background: #ffffff;
+    --color-font: #000000;
+    --color-row-hover: #adadad;
+    --color-link: #20d1e9;
+    --color-menu: #cecece;
+    --color-menu-hover: #ffffff;
+    --color-menu-active: #cecece;
+}
+
+
+.theme-customizer {
+    position:fixed;
+    right:0;
+    top: 30%;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px 0 0 25px;
+    background-color: var(--color-primary);
+    color: white;
+    text-align:center;
+    line-height: 50px;
+    font-size:24px;
+    cursor:pointer;
+    user-select: none;
+    transition: all .25s;
+}
+
+.theme-customizer.active {
+    background-color: var(--color-background);
+    color:  var(--color-font);
+    width: 250px;
+    top: 25%;
+    height: 525px;
+    border: 3px solid var(--color-primary);
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    transition: all .5s;
+    cursor:default;
+    z-index: 9999;
+}
+
+.theme-customizer.active .colors.active {
+    color: #000;
+    font-size: 12px;
+}
+
+.theme-customizer.active .inactive, .theme-customizer.inactive .active {
+    visibility: hidden;
+}
+
+.theme-customizer.active .active, .theme-customizer.inactive .inactive {
+    visibility: visible;
+}
+
+.theme-customizer.active .header {
+    position:absolute;
+    top:0;
+    width:100%;
+    height: 50px;
+    background-color: var(--color-primary);
+    color:white;
+    font-size: 16px;
+    font-weight: bold;   
+    text-align:left;
+    text-indent: 5px;
+    transition: all .5s;
+}
+
+.theme-customizer.active .header .close {
+    float:right;
+    color:red;
+    line-height: 50px;
+    margin-right: 10px;
+    opacity: .3;
+    text-shadow:none;
+    transition: all .25s;
+}
+
+.theme-customizer.active .header .close:hover {
+    opacity: .6;
+}
+
+.theme-customizer.inactive p.inactive {
+    display:inline-block;
+    position:absolute;
+    line-height: 50px;
+    font-weight: bold;
+    visibility: hidden;
+    font-size: 16px;
+    right: 10px;
+}
+
+.theme-customizer.inactive p {
+    visibility: hidden;
+}
+
+.theme-customizer.active p {
+    visibility: visible;
+}
+
+.theme-customizer.active .header p {
+    line-height: 50px;
+    margin: 0;
+}
+
+.theme-customizer.active fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.theme-customizer.inactive:hover {
+    width: 200px;
+    text-align:left;
+    text-indent: 10px;
+    background: var(--color-primary-hover);
+    z-index: 9999;
+}
+
+.theme-customizer.inactive:hover p.inactive {
+    visibility: visible;
+}
+
+
+
+.theme-primary {
+    background-color: var(--color-primary);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+.navbar-inverse .navbar-nav {
+    transition: all .25s;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    background-color: var(--color-primary-active);
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-background);
+    transition: all .25s;
+}
+
+
+.navbar-inverse .navbar-nav>li>a {
+    color: var(--color-menu);
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+    color: var(--color-menu-hover);
+}
+
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    background-color: var(--color-primary-active);
+    transition: all .25s;
+}
+
+table>tbody>tr:hover {
+    background-color: var(--color-row-hover);
+    transition: all 0.25s ease-in-out;
+}
+
+a {
+    color: var(--color-link);
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: 1px solid var(--color-font);
+}
+
+
+.theme-input-color {
+    padding:0;
+    min-width:0;
+}
+
+
+.theme-label {
+    margin-right: 0.5rem;
+    display: block;
+    margin-bottom: 0.7rem;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--color-font);
+}
+
+
+
+
+/* END THEME CUSTOMIZATION */
+
+
+
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, sans-serif;
+    color: var(--color-font);
+    background-color: var(--color-background);
 }
 
 :root {
