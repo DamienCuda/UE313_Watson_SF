@@ -19,14 +19,12 @@
 
 <body>
     <div class="container">
-        {% if app.user %}
         {{ include('theme/header.html.twig') }}
         {{ include('theme/theme.html.twig') }}
         
         {% block body %}{% endblock %}
 
         
-        {% endif %}
 
     </div>
 
