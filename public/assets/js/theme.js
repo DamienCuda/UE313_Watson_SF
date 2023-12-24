@@ -1,6 +1,4 @@
-$(document).on("ready", function() {
-
-    console.log('oui');
+$(document).ready(function() {
 
     var handlerInAction = false;
 
@@ -131,6 +129,18 @@ $(document).on("ready", function() {
     $("#customizerMenuHover").on("change", function() {
         document.querySelector('body').style.setProperty('--color-menu-hover', $(this).val());
         $.cookie('colorMenuHover', $(this).val());
+    });
+
+
+    var path = window.location.pathname;
+    path = path.replace(/\/$/, "");
+    path = decodeURIComponent(path);
+
+    $(".menu a").each(function () {
+        var href = $(this).attr('href');
+        if (path.substring(0, href.length) === href) {
+            $(this).closest('a').addClass('active');
+        }
     });
 
 });

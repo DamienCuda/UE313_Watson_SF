@@ -1,0 +1,64 @@
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
+{% endblock %}
+    
+<div class="theme-customizer inactive">
+    <span class="fa fa-pencil inactive"></span><p class="inactive">Personnalisation</p>
+
+    <div class="header active">
+        <p><span class="fa fa-pencil"></span>&nbsp;&nbsp;Thème <span class="close" id="closeCustomizer">X</span></p>
+        
+        
+        <div class="colors active">
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerPrimaryColor">
+                <label class="theme-label" for="customizerPrimaryColor" style="display:inline;text-indent: 10px;">Primaire</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerPrimaryColorHover">
+                <label class="theme-label" for="customizerPrimaryColorHover" style="display:inline;text-indent: 10px;">Primaire (survol)</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerPrimaryColorActive">
+                <label class="theme-label" for="customizerPrimaryColorActive" style="display:inline;text-indent: 10px;">Primaire (actif)</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerBackgroundColor">
+                <label class="theme-label" for="customizerBackgroundColor" style="display:inline;text-indent: 10px;">Fond</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerFontColor">
+                <label class="theme-label" for="customizerFontColor" style="display:inline;text-indent: 10px;">Texte</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerRowHover">
+                <label class="theme-label" for="customizerRowHover" style="display:inline;text-indent: 10px;">Lignes (survol)</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerLinkColor">
+                <label class="theme-label" for="customizerLinkColor" style="display:inline;text-indent: 10px;">Liens</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerMenu">
+                <label class="theme-label" for="customizerMenu" style="display:inline;text-indent: 10px;">Boutons (texte)</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="color" class="theme-input-color" id="customizerMenuHover">
+                <label class="theme-label" for="customizerMenuHover" style="display:inline;text-indent: 10px;">Boutons (texte survol/actif)</label>
+            </fieldset>
+            
+        </div>
+    </div>
+
+</div>
