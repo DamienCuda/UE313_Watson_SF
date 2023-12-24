@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home !{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <div>
+        <h1>Links</h1>
+        {% if links is not empty %}
+        <ul>
+            {% for link in links %}
+            <li>
+                <a href="{{ path('app_link_show', {'id': link.id}) }}">{{ link.titre }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Aucun lien n'est disponible pour l'affichage.</p>
+        {% endif %}
+        <a href="{{ path('app_user_index') }}">Voir tous les utilisateurs</a>
+    </div>
+</div>
+{% endblock %}

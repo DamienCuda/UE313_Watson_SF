@@ -1,4 +1,4 @@
 app_register:
     path: /
-    controller: App\Controller\ArticleController::index
+    controller: App\Controller\HomeController::index
     methods: ['GET', 'HEAD']
